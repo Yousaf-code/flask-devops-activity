@@ -25,7 +25,7 @@ def test_create_student():
     data = response.get_json()
 
     assert response.status_code == 201
-    assert data["message"] == "Student created"
+    assert data["message"] == "Student has been created"
     assert data["data"] == payload
     assert "student_id" in data
 

@@ -29,7 +29,7 @@ def create_student():
     students[student_id] = data
 
     return jsonify({
-        "message": "Student created",
+        "message": "Student has been created",
         "student_id": student_id,
         "data": data
     }), 201
@@ -38,7 +38,7 @@ def create_student():
 @app.route('/student/<int:student_id>', methods=['PUT'])
 def update_student(student_id):
     data = request.get_json(force=True)
-    students[student_id] = data  # overwrite or create
+    students[student_id] = data
 
     return jsonify({
         "message": "Student updated",
@@ -49,7 +49,7 @@ def update_student(student_id):
 
 @app.route('/student/<int:student_id>', methods=['DELETE'])
 def delete_student(student_id):
-    students.pop(student_id, None)  # remove if exists
+    students.pop(student_id, None)
 
     return jsonify({
         "message": "Student deleted",
